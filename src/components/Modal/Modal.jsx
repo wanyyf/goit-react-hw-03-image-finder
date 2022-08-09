@@ -1,3 +1,5 @@
+import propTypes from 'prop-types';
+
 const Modal = ({ largeSrc, onOverlayClick }) => {
   return (
     <div
@@ -13,6 +15,10 @@ const Modal = ({ largeSrc, onOverlayClick }) => {
       </div>
     </div>
   );
+};
+Modal.propTypes = {
+  largeSrc: propTypes.string.isRequired,
+  onOverlayClick: propTypes.func.isRequired,
 };
 
 export default Modal;
