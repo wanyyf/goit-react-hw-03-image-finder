@@ -15,7 +15,6 @@ class ImageGallery extends Component {
 
   onItemClick = largeSrc => {
     this.setState({ largeSrc: largeSrc });
-    console.log(largeSrc);
     this.toggleModal();
   };
   render() {

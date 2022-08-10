@@ -17,8 +17,8 @@ export class App extends Component {
   componentDidMount() {}
   componentDidUpdate(prevProps, prevState) {
     if (prevState.photosName !== this.state.photosName) {
-      this.setState({ photos: [] });
       this.photosRequest();
+      return;
     }
     if (prevState.page !== this.state.page) {
       this.photosRequest();
@@ -45,7 +45,7 @@ export class App extends Component {
       .finally(() => this.setState({ loading: false }));
   }
   handleFormSubmit = photosName => {
-    this.setState({ photosName, page: 1 });
+    this.setState({ photosName, page: 1, photos: [] });
   };
   onLoadBtnClick = () => {
     this.setState(prevState => ({ page: prevState.page + 1 }));
